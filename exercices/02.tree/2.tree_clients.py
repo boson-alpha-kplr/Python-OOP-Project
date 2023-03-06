@@ -3,7 +3,6 @@ import json
 from unidecode import unidecode
 from treelib import Tree
 import os
-
 # Get the directory path of the current Python file
 local_path = os.path.dirname(os.path.abspath(__file__))
 # Chargement des données JSON à partir du fichier dans un dictionnaire python
