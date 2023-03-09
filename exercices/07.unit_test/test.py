@@ -2,7 +2,7 @@
 import sys
 import unittest
 from inventory_manager import InventoryManager
-from product_classes import Chaise, Pantalon, Product
+from product_classes import Chaise, Pantalon
 sys.path.extend(['.','..'])
 
 #Import des classes à tester
