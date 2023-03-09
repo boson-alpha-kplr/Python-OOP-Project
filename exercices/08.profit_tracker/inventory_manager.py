@@ -1,9 +1,8 @@
 #La classe "InventoryManager" est une classe qui permet de gérer un inventaire de produits. 
 
 from typing import Dict
-from product_classes import Product
 from inventory_product_entry import InventoryProductEntry
-
+from product_classes import Product
 
 
 class InventoryManager:
@@ -70,8 +69,9 @@ class InventoryManager:
     
     def sell_product(self, product_name, quantity):
         #Utiliser une boucle pour parcourir les clés du dictionnaire 'inventory'
-        for key in self.inventory: #Pour chaque itération, on vérifie 
-            if product_name== self.inventory[product_name].key():  #si le nom du produit fourni est équal à la clé du dictionnaire.
+        for keys in self.inventory:
+            if keys== product_name:     #Pour chaque itération, on vérifie
+            #if product_name== self.inventory[product_name].keys():  #si le nom du produit fourni est équal à la clé du dictionnaire.
                 product_name.sell(quantity) #Si le produit est trouvé, appeler la méthode 'sell' de l'objet InventoryProductEntry correspondant avec la quantité à vendre
             else:
                 print('La vente a échoué') #Sinon, afficher un message d'erreur indiquant que la vente a échoué

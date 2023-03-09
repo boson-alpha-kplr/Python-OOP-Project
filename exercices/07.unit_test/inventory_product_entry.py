@@ -7,15 +7,13 @@ class InventoryProductEntry:
     def __init__(self, product:Product, quantity):
         self.product = product
         self.quantity = quantity
-        self.sales = 0
-        self.expenses = 0
-
         """
         'product' : un objet de type produit qui rassemble les différents attributs et caractéristiques de ce dernier
         'quantity' : un entier qui représente le nombre des pièces du produit en question
         """
         # Initialisation des variables
-        
+        self.sales=0
+        self.expenses=0
         """
         Vous devez initialiser deux variables. 
         la variable 'sales' qui stocke le total des revenues des ventes du produit
@@ -29,20 +27,15 @@ class InventoryProductEntry:
     Elle met également à jour les ventes totales pour le produit.
     
     """
-    def check_quantity(self, quantity):
-        if self.quantity >= quantity:
-          print("Il y a suffisamment de quantité disponible.")
-        else:
-          print("Il n'y a pas suffisamment de quantité disponible.")
-
+    
     def sell(self, quantity):
         #Avant de mettre à jour l'état du stocke du produit, on doit vérifier si on a déjà une quantité suffisante à vendre.
-        if self.check_quantity(quantity):
+        if self.quantity>= quantity:
           self.quantity -= quantity  #Réduire la quantité en stock par la quantité demandée
           self.sales += quantity * self.product.price #Ajouter le revenue total de la vente à la variable 'sales' en multipliant la quantité vendue par le prix du produit
           return True
         else:
-          print(f'Le stock du produit' [Product],'est insuffisant.')
+          print(f'Le stock du produit {self.product.name} est insuffisant.')
           return False
        
             
@@ -82,4 +75,4 @@ class InventoryProductEntry:
     """
     def __repr__(self):
         # Retourner une chaîne de caractères formatée contenant le nom du produit, la marque, la quantité en stock et le prix du produit.
-        return f"{self.product.name} ({self.product.brand}): {self.quantity} en stock à {self.product.price} par unité."
+        return f"{self.product.name} ({self.product.marque}): {self.quantity} in stock, price:{self.product.price}"
