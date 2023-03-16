@@ -50,7 +50,6 @@ def sep():
     print("====================")
 
 def main():
-
     inventory_manager = InventoryManager()
     # write code to read json file as dict
         #
